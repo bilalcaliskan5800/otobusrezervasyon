@@ -9,11 +9,12 @@ namespace OtobusRezervasyon.BLL
 {
     public class CustomerBLL
     {
-        public static void  MusteriKayit(int Rezervasyonid, string MusteriAdiSoyadi,string tckimlik,int seferid, int binisdurakid,int inisdurakid,string aciklama)
+        public static void  MusteriKayit(string MusteriAdiSoyadi,string tckimlik,int seferid, int binisdurakid,int inisdurakid,string aciklama)
         {
             SeferiEntities musterikayit = new SeferiEntities();
             Rezervasyonlar rezervasyon = new Rezervasyonlar();
-            rezervasyon.RezervasyonID = Rezervasyonid;
+            int rezervasyonid = rezervasyon.RezervasyonID + 1;
+            rezervasyon.RezervasyonID = rezervasyonid;
             rezervasyon.MusteriAdiSoyadi = MusteriAdiSoyadi;
             rezervasyon.MusteriTCKN = tckimlik;
             rezervasyon.SeferID = seferid;

@@ -76,12 +76,11 @@ namespace OtobusRezervasyon
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            int rezervasyonid = Convert.ToInt32(txt_Rezervasyon.Text);
-            string MusteriAdSoyad = $"{txt_MusteriAd + " " + txt_MusteriSoyad}";
+            string MusteriAdSoyad = txt_musteriAdSoyad.Text;
             string tckimlik = txt_TcKimlik.Text;
             string aciklama = txt_Aciklama.Text;
-            CustomerBLL.MusteriKayit(rezervasyonid,MusteriAdSoyad,tckimlik,seferid,neredenid,durakid,aciklama);
-
+            CustomerBLL.MusteriKayit(MusteriAdSoyad,tckimlik,seferid,neredenid,durakid,aciklama);
+            MessageBox.Show("İşlem Tamamlandı");
         }
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
