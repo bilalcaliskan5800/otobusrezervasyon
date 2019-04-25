@@ -13,8 +13,6 @@ namespace OtobusRezervasyon.BLL
         {
             SeferiEntities musterikayit = new SeferiEntities();
             Rezervasyonlar rezervasyon = new Rezervasyonlar();
-            int rezervasyonid = rezervasyon.RezervasyonID + 1;
-            rezervasyon.RezervasyonID = rezervasyonid;
             rezervasyon.MusteriAdiSoyadi = MusteriAdiSoyadi;
             rezervasyon.MusteriTCKN = tckimlik;
             rezervasyon.SeferID = seferid;

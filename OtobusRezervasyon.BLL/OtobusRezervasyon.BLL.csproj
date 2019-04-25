@@ -55,9 +55,6 @@
     <Compile Include="SeferBLL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RezervasyonBLL.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>

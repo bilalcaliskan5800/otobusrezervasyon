@@ -71,7 +71,7 @@ namespace OtobusRezervasyon
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            tabControl1.SelectedTab = tabPage3;
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -79,8 +79,16 @@ namespace OtobusRezervasyon
             string MusteriAdSoyad = txt_musteriAdSoyad.Text;
             string tckimlik = txt_TcKimlik.Text;
             string aciklama = txt_Aciklama.Text;
-            CustomerBLL.MusteriKayit(MusteriAdSoyad,tckimlik,seferid,neredenid,durakid,aciklama);
-            MessageBox.Show("İşlem Tamamlandı");
+            if(tckimlik == "" | MusteriAdSoyad == "")
+            {
+                MessageBox.Show("Gerekli Bilgileri Girmeniz Gerekiyor.");
+            }
+            else
+            {
+                CustomerBLL.MusteriKayit(MusteriAdSoyad, tckimlik, seferid, neredenid, durakid, aciklama);
+                MessageBox.Show("Rezervasyon Tamamlandı.");
+            }
+
         }
 
         private void TextBox2_TextChanged(object sender, EventArgs e)
@@ -91,6 +99,11 @@ namespace OtobusRezervasyon
         private void Lbx_Guzergah_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             seferid = Convert.ToInt32(lbx_Guzergah.SelectedValue);
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedTab = tabPage2;
         }
     }
 }
